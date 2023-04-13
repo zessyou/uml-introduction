@@ -1,0 +1,17 @@
+@startuml 例題3
+left to right direction
+actor 利用者#DDDDDD;line:black;line.bold;
+actor 管理者#DDDDDD;line:black;line.bold;
+rectangle 図書館システム {
+usecase ユーザを登録する << U1 >>
+usecase ユーザを認証する << U2 >>
+usecase 図書を検索する << U3 >>
+usecase 貸出をうける << U4 >>
+}
+利用者--> ユーザを登録する : 登録する
+利用者---> ユーザを認証する :認証する
+利用者---> 図書を検索する :検索する
+利用者---> 貸出をうける :貸出
+ユーザを登録する <-- 管理者 :登録
+貸出をうける <-- 管理者 :貸出
+@enduml

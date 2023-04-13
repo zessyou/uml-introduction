@@ -1,0 +1,12 @@
+@startuml ユースケース図
+left to right direction
+actor 利用者 #4169e1;line:black;line.bold;
+package 携帯システム {
+usecase 連絡先を登録する
+usecase 電話をかける
+usecase 通話履歴をみる
+}
+利用者 --> 連絡先を登録する
+利用者 --> 電話をかける
+利用者 --> 通話履歴をみる
+@enduml
