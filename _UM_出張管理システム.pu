@@ -1,0 +1,22 @@
+@startuml ユースケース図
+left to right direction
+actor 申請者 #ff0000;line:black;line.bold;
+actor 承認者 #ff00ff;line:black;line.bold;
+actor 経理担当者 #00ff9a;line:black;line.bold;
+actor 交通管理システム #0000ff;line:black;line.bold;
+rectangle 図書管理システム{
+usecase 出張申請を登録する
+usecase 出張申請を提出する
+usecase 出張申請を承認する
+usecase 出張申請を却下する
+usecase 出張申請を差し戻す
+usecase 出張申請を確認する
+}
+申請者 --> 出張申請を登録する
+申請者 -->出張申請を提出する
+承認者 --> 出張申請を承認する
+承認者 --> 出張申請を却下する
+承認者 --> 出張申請を差し戻す
+経理担当者 --> 出張申請を確認する
+出張申請を登録する <--交通管理システム
+@enduml
