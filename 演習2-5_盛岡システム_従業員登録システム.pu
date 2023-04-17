@@ -1,0 +1,9 @@
+@startuml 販売管理システム
+actor 販売部#4169e1;line:black;line.bold;
+rectangle 盛岡商事 {
+usecase 注文商品をシステムで確認する
+usecase 商品の出荷状況をシステムに登録する
+}
+販売部 --> 注文商品をシステムで確認する
+販売部 --> 商品の出荷状況をシステムに登録する
+@enduml
