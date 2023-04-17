@@ -1,0 +1,10 @@
+@startuml ユースケース図
+' left to right direction
+rectangle ホテル{
+usecase ホテル2
+usecase 経営者
+usecase ホテル従業員
+}
+ホテル2<|-- 経営者
+ホテル2<|-- ホテル従業員
+@enduml
