@@ -1,18 +1,14 @@
-@startumlユースケース図
-
-actor 社員 
-actor 人事担当者
-rectangle 図書管理システム{ 
-usecase 従業員登録 
-usecase 社員情報参照 
-usecase 社員情報変更
-usecase 変更届けを提出
-usecase 社員情報を編集
+@startuml ユースケース図
+left to right direction
+actor 人事担当者 #DDDDDD;line:black;line.bold;
+actor 従業員 #DDDDDD;line:black;line.bold;
+rectangle 従業員登録システム{
+    usecase 社員情報を参照する 
+    usecase 社員情報登録する 
+    usecase 社員情報を修正する
 }
- 社員--|>社員情報の変更 
- 社員--|>社員情報参照 
- 社員--|>変更届けを提出 
- 変更届けを提出--|> 人事担当者
- 社員情報を編集<.人事担当者:<<include>>
-人事担当者 --->社員情報参照
+従業員 --> 社員情報を参照する
+人事担当者--> 社員情報を修正する
+人事担当者 --> 社員情報登録する
+人事担当者 --|> 従業員
 @enduml
