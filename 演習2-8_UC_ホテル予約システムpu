@@ -1,8 +1,8 @@
 @startuml 演習
 left to right direction
-actor 利用者 #AcA;line:Orange;line.bold;
-actor ホテル従業員 #BAA;line:LightBlue;line.bold;
-actor 管理者 #DDE;line:Red;line.bold;
+actor 利用者    #4169e1;line:black;line.bold;
+actor ホテル従業員 #4169e1;line:black;line.bold;
+actor 管理者 #4169e1;line:black;line.bold;
 rectangle ホテル予約システム{
 usecase 空室状況を閲覧する
 usecase (<u>部屋を予約する</u>\n拡張点\nキャンペーン期間中に予約する) as input
