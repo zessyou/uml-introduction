@@ -1,0 +1,11 @@
+@startuml
+left to right direction
+class 会社()
+class 社員()
+' 会社 --> 社員:雇う
+会社"1"--"*" 社員
+note top of 会社:雇用者
+note top of 社員:従業員
+
+@enduml
+
