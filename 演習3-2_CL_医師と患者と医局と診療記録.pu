@@ -1,0 +1,9 @@
+@startuml
+left to right direction
+class 医師 {}
+class 患者 {}
+
+医師 "1" -- "*" 患者 : 診察する
+note top of 医師 : 担当医
+note top of 患者 : 病人
+@enduml

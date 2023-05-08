@@ -1,0 +1,14 @@
+@startuml
+class 社員 {}
+class 正社員{
+
+}
+class 派遣{
+}
+class 契約社員{
+
+}
+社員 <|--down- 正社員
+社員<|--down- 派遣
+社員<|--down- 契約社員
+@enduml
