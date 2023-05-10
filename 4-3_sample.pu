@@ -1,0 +1,21 @@
+@startuml 図４－３
+ hide footbox
+participant ":ログイン画面" as boundary
+participant ":ログインコントローラ" as control
+participant ":会員情報" as entity
+
+boundary -> control
+note right : 実行仕様
+
+activate control
+control -> entity
+note right: 同期メッセージ
+
+
+control <-- entity
+note right: 同期メッセージの戻り
+boundary <--- control
+deactivate control
+
+
+@enduml

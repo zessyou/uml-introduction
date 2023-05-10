@@ -1,0 +1,43 @@
+@startuml 図4-9 loop複合フラグメント
+hide footbox
+
+skinparam style strictuml /' 厳密なUMLに準拠する '/
+Actor 顧客 as user
+participant ":入力画面" as input
+participant ":貸出コントローラ" as control
+participant ":貸出記録" as record
+
+user -> input : データ入力()
+activate  input
+  input -> control : 貸出実行()
+  activate  control
+
+  loop 0,商品数
+    control -> record:データ登録()
+    activate  record
+    deactivate record
+  end loop
+input <-- control : 貸出明細情報()
+deactivate  control
+
+deactivate input
+
+@enduml
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,36 @@
+@startuml 図４－１シーケンス図の例
+hide footbox
+Actor 登録会員 as member
+participant ":ログイン画面" as boundary <<boundary>>
+participant ":ログインコントローラ" as control <<control>>
+' participant "会員情報" as entity
+
+mainframe sd ログイン 
+
+member -> boundary : 1:ログイン情報入力（会員番号、パスワード）
+activate  boundary
+    boundary -> control : 1.1:ログイン情報検証（会員番号、パスワード）
+
+
+    activate control
+    create "会員情報" as entity
+    control -> entity :1.1.1生成() <<create>>
+        control -> entity : 1.1.2会員情報取得():<<create>>
+    
+        activate entity
+            control <- entity : 登録会員情報
+        deactivate entity
+
+    boundary <- control : ログイン成功通知
+        
+    deactivate control
+
+deactivate boundary
+    
+
+' control -> entity : <<create>>\n1.1.1生成():
+' control -> entity : 1.1.2会員情報取得():<<create>>
+' control <- entity : 登録会員情報
+
+
+@enduml

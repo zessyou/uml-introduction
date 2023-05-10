@@ -1,0 +1,47 @@
+@startuml 図4-6「ref」を使用した例
+hide footbox
+Actor 登録会員 as member
+participant ":ログイン画面" as login
+participant ":ログインコントローラ" as control
+' participant "会員情報" as entity
+
+ 'メッセージに自動で番号を降る
+ autonumber
+' 厳密なUMLに準拠する
+skinparam style strictuml
+
+
+' refの枠線
+skinparam sequenceReferenceBorderColor red
+' refの背景色
+skinparam sequenceReferenceBackgroundColor white
+
+' skinparam sequenceReferenceHeaderBackgroundColor lightblue
+
+
+mainframe sd ログイン
+
+member -> login : ログイン情報入力
+    note top
+  コメントc
+    end note
+activate  login
+    login -> control : ログイン情報検証
+
+    activate control
+    create entity
+    control -->> entity :<<create>>\n 3:
+
+    ref over control, entity
+        入力情報チェック
+    end ref
+
+
+    login <<-- control : ログイン成功通知
+       
+    deactivate control
+
+deactivate login
+   
+
+@enduml

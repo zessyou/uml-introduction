@@ -1,0 +1,22 @@
+@startuml 再帰呼出し
+ hide footbox
+participant ":ログインコントローラ" as control
+
+activate control
+    control -> control: 入力情報チェック（）
+    activate control
+    deactivate control
+' note right of control : 再帰呼出し
+
+deactivate control
+
+@enduml
+
+
+
+
+
+
+
+
+
