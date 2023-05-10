@@ -1,0 +1,12 @@
+@startuml
+left to right direction
+class 車{
+}
+
+class タイヤ {
+- 部品 : String
+}
+
+タイヤ "1..*" --o "1"車
+
+@enduml
