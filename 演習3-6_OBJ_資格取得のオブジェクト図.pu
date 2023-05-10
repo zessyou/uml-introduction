@@ -1,0 +1,23 @@
+@startuml 資格取得
+    object "<u>資格リスト:資格</u>" as quadrilateral{
+        名称
+    }
+    object "<u>社員情報:社員</u>" as member1{
+        氏名=高橋洋平
+        資格名称=情報処理安全確保支援士
+        申請日=2020年10月21日
+    }
+    object "<u>社員情報:社員</u>" as member2{
+        氏名=樋口正之
+        資格名称=情報処理安全確保支援士
+        申請日
+    }
+    object "<u>社員情報:社員" as member3{
+        氏名=高橋洋平
+        資格名称=LinuC試験Level1
+        申請日=2021年3月28日
+    }
+    quadrilateral -- member1
+    quadrilateral -- member2
+    quadrilateral -- member3
+@enduml

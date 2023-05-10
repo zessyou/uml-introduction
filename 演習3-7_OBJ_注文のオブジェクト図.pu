@@ -1,0 +1,44 @@
+@startuml 注文のオブジェクト図
+    object "<u>注文リスト:注文</u>" as order1{
+        注文日 = 11月21日
+        数量 = 2個
+    }
+    object "<u>注文リスト:注文</u>" as order2{
+        注文日 = 11月21日
+        数量 = 1 
+    }
+    object "<u>注文リスト:注文</u>" as order3{
+        注文日 = 12月23日
+        数量 = 1
+    }
+    object "<u>商品リスト:商品</u>" as product1{
+        商品名 = テレビ
+        型式 = V12345
+    }
+    object "<u>商品リスト:商品</u>" as product2{
+        商品名 = 冷蔵庫
+        型式 = R8765
+    }
+    object "<u>商品リスト:商品</u>" as product3{
+        商品名 = プロジェクタ
+        型式 = P1122
+    }
+    object "<u>顧客リスト:顧客</u>" as customer1{
+        氏名 = 髙田利恵
+        住所
+    }
+    object "<u>顧客リスト:顧客</u>" as customer2{
+        氏名 = 大坪直之
+        住所
+    }
+    object "<u>重要顧客リスト:重要顧客</u>" as importantcustomer{
+        氏名 = 高橋洋平
+        住所
+    }
+    order1 -- product1
+    order2 -- product2
+    order3 -- product2
+    importantcustomer -- order1
+    importantcustomer -- order2
+    customer1 -- order2
+@enduml
