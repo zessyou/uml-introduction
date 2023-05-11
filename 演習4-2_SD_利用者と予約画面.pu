@@ -1,0 +1,12 @@
+@startuml
+ hide footbox
+skinparam style strictuml /' 厳密なUMLに準拠する'/
+participant ":検索画面" as seach
+participant ":検索コントローラ" as control
+
+activate seach
+seach ->> control: 検索情報取得（）
+deactivate control
+
+note right of seach : 非同期メッセージ
+@enduml
