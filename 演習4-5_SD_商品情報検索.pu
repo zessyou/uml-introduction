@@ -1,0 +1,33 @@
+@startuml 商品情報検索
+hide footbox
+actor ":会員" as membership
+participant ":商品検索画面" as boundary <<boundary>>
+participant ":検索コントローラー" as control <<control>>
+participant ":商品" as productlist <<entity>>
+participant ":商品カテゴリ" as category <<entity>>
+
+
+activate membership
+membership -> boundary
+activate boundary
+boundary -> control:商品検索(商品番号)
+    activate control
+    create productlist
+    boundary -->> productlist:生成() <<create>>
+
+    loop [商品カテゴリ数]
+        create category
+        control -> category:生成() <<create>>
+        control -> productlist:商品カテゴリの設定()
+        activate productlist
+        deactivate productlist
+    end loop
+
+    boundary <<-- control:検索結果
+    deactivate control
+
+    boundary -> boundary:商品を表示する(商品情報)
+    activate boundary
+    deactivate boundary
+deactivate boundary
+@enduml
