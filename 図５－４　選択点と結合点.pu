@@ -1,0 +1,12 @@
+@startuml
+' left to right direction
+[*] --> 登山中
+state c <<choice>>
+state c <<choice>>
+登山中-down-> c
+c --> 頂上で昼食
+c -right-> 下山中: 天気が悪化
+' PlantUMLに結合点の表示形式はない
+頂上で昼食--> 下山中
+下山中-right-> [*]
+@enduml

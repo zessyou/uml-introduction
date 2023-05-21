@@ -1,0 +1,12 @@
+@startuml
+state 自動車で通勤中{
+state entry <<entryPoint>>
+state exit <<exitPoint>>
+entry -> 停止中
+停止中-down-> 運転中
+運転中-up-> 停止中
+停止中-right-> exit
+}
+[*] --> entry
+exit -> [*]
+@enduml

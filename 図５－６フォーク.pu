@@ -1,0 +1,20 @@
+@startuml
+left to right direction
+state f <<fork>>
+state j <<join>>
+state 電車で通話中{
+    state 移動中
+    state 読書中
+}
+
+[*] --> f
+f --> 移動中
+f --> 読書中
+移動中 -->j
+読書中 -->j
+j -->[*]
+
+
+
+
+@enduml

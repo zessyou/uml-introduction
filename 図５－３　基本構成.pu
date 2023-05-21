@@ -1,0 +1,6 @@
+@startuml 基本構成
+' left to right direction
+[*] --> 待機中: タイマーセット
+待機中--> 炊飯中: 待機完了
+炊飯中--> [*] : 炊飯完了
+@enduml
