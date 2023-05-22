@@ -1,0 +1,10 @@
+@startuml プリンタ
+left to right direction
+    state 待機中
+    state 印刷中
+    state 用紙無し
+    待機中 --> 印刷中 : 印刷要求
+    待機中 --> 用紙無し : 運転開始
+    印刷中 --> 待機中 : 印刷終了
+    用紙無し --> 待機中 : 運転終了
+    @enduml 
