@@ -1,0 +1,22 @@
+@startuml 並列処理
+title カレー作り
+start
+:手を洗う;
+:野菜を洗う;
+fork
+:具材を切る;
+:具材を炒める;
+:鍋に水と炒めた具材を入れる;
+fork
+:具材を煮る;
+fork again
+:あくを取る;
+end fork 
+:カレールーを入れて煮込む;
+fork again
+:米を洗う;
+:米を炊く;
+end fork
+:お皿にカレールーとご飯を盛る;
+stop
+@enduml

@@ -1,0 +1,14 @@
+@startuml 分岐
+title 水平分岐の例
+start
+:アクティビティA;
+if (x > 0) then (true)
+:アクティビティB;
+else if (x == 0) then (true)
+:アクティビティC;
+else (false)
+:アクティビティD;
+endif
+:アクティビティE;
+stop
+@enduml
