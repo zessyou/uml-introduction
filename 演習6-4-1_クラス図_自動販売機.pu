@@ -1,0 +1,12 @@
+@startuml 自動販売機
+skinparam classAttributeIconSize 0
+class 自動販売機 {}
+class 料金装置  {}
+class ベンダー装置  {}
+class ボタン  {}
+
+自動販売機 "1"*-- "*"ボタン
+自動販売機 "1"*-- "1"料金装置
+自動販売機 "1"*-- "1"ベンダー装置
+
+@enduml
