@@ -1,0 +1,14 @@
+@startuml ライントレーサ設計
+left to right direction
+actor ユーザー#4169e1;line:black;line.bold;
+actor 光センサー#4169e1;line:black;line.bold;
+actor 左右モーター#4169e1;line:black;line.bold;
+
+rectangle ライントレーサーシステム{
+    usecase ラインの右境界線上を進む
+}
+
+ユーザー --> ラインの右境界線上を進む
+ラインの右境界線上を進む <-- 光センサー
+ラインの右境界線上を進む <-- 左右モーター
+@enduml

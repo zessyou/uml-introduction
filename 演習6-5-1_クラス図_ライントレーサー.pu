@@ -1,0 +1,16 @@
+@startuml ライントレーサー
+left to right direction
+hide circle
+class ライントレーサー{}
+class 光センサー{}
+class 右モータ{}
+class 左モータ{}
+class CPU{}
+class 電源SW{}
+
+ライントレーサー "1" *-- "1" 光センサー
+ライントレーサー"1" *-- "1" 右モータ
+ライントレーサー "1" *-- "1" 左モータ
+ライントレーサー "1" *-- "1" CPU
+ライントレーサー "1" *-- "1" 電源SW
+@enduml
