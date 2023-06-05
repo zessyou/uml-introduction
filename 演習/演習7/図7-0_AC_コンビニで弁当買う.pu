@@ -1,0 +1,30 @@
+@startuml パーティション
+title コンビニで弁当を買う
+
+|客|
+start
+:弁当をレジに持っていく;
+
+|店員|
+    fork
+
+    |客|
+    :お金を払う;
+
+    |店員|
+    :精算する;
+    fork again
+
+    |店員|
+    if (温めますか？) then (Yes)
+        :弁当を温める;
+    else (No)
+    endif
+
+    :弁当を袋に入れる;
+    endfork
+    
+|客|
+:弁当を持つ;
+stop
+@enduml
